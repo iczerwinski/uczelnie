@@ -14,6 +14,7 @@ import static com.demo.entity.City.WARSAW_ID;
 @Controller
 public class MainPageController {
 
+
     @Autowired
     private FacultyService facultyService;
 
