@@ -27,6 +27,7 @@ public class MainPageController {
         model.addAttribute("faculties", facultyService.findFaculties());
         model.addAttribute("facultiesByCity", facultyService.findFacultiesByCity(cityId));
         return "mainPage";
+        //comment dev branch
     }
 
 }
