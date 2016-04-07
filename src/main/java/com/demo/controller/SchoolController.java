@@ -1,14 +1,14 @@
 package com.demo.controller;
 
 import com.demo.dto.SchoolRequestDto;
+import com.demo.entity.SchoolType;
+import com.demo.service.FacultyService;
 import com.demo.service.SchoolService;
+import com.demo.service.SchoolTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -17,15 +17,19 @@ public class SchoolController {
 
     @Autowired
     private SchoolService schoolService;
+    @Autowired
+    private FacultyService facultyService;
+    @Autowired
+    private SchoolTypeService schoolTypeService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView add(@ModelAttribute(value = "newSchool") SchoolRequestDto newSchool) {
+    public ModelAndView addNewSchool(@RequestBody SchoolRequestDto newSchool) {
         schoolService.add(newSchool);
         return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}/edit")
-    public String edit(Model model, @PathVariable(value = "id") Integer schoolId) {
+    public String editPage(Model model, @PathVariable(value = "id") Integer schoolId) {
         model.addAttribute("school", schoolService.get(schoolId));
         return "schoolEdit";
     }
@@ -35,4 +39,14 @@ public class SchoolController {
         schoolService.update(schoolId, school);
         return "redirect:/";
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
+    public String schoolInfoPage(Model model, @PathVariable(value = "id") Integer schoolId) {
+        model.addAttribute("school", schoolService.get(schoolId));
+        model.addAttribute("schoolFaculties", facultyService.getBySchoolId(schoolId));
+        return "school";
+    }
+
+
+
 }

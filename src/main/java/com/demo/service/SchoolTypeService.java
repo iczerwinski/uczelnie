@@ -17,4 +17,9 @@ public class SchoolTypeService {
         return schoolTypeRepository.findByOrderByNameAsc();
     }
 
+    public SchoolType get(Integer schoolId) {
+        return schoolTypeRepository.findOne(schoolId);
+    }
+
+
 }

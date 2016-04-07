@@ -3,79 +3,350 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.0/jquery.min.js"
             th:src="@{/webjars/jquery/2.2.0/jquery.min.js}"></script>
     <script src="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/js/bootstrap.min.js"
             th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+    <link href="web/css/theme.css" rel='stylesheet' type='text/css'/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'/>
+    <!--start slider -->
+    <link rel="stylesheet" href="web/css/fwslider.css" media="all"/>
+    <script src="web/js/jquery-ui.min.js"></script>
+    <script src="web/js/css3-mediaqueries.js"></script>
+    <script src="web/js/fwslider.js"></script>
+
 </head>
 <body>
-
-<!--<div class="container">
-    &lt;!&ndash; Static navbar &ndash;&gt;
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Project name</a>
+<div class="header-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="logo"><a href="index.html"><img src="web/images/logo.png" alt=""/></a></div>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-                </ul>
-            </div>&lt;!&ndash;/.nav-collapse &ndash;&gt;
-        </div>&lt;!&ndash;/.container-fluid &ndash;&gt;
-    </nav>
+            <div class="col-md-8">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header"><span class="text-left"><a href="#">MENU</a></span>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                    data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <div class="btn-group show-on-hover">
+                                        <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown">
+                                            Spis Uczelni<span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Wyższe</a></li>
+                                            <li><a href="#">Podyplomowe</a></li>
+                                            <li><a href="#">Policealne</a></li>
+                                            <li><a href="#">Językowe</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="about.html">Wyszukiwarka</a></li>
+                                <li><a href="contact.html">Kontakt</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="right">
+                    <ul class="list-unstyled">
+                        <li class="a text-left"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                        </li>
+                        <li><a href="#">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>
 
-    &lt;!&ndash; Main component for a primary marketing message or call to action &ndash;&gt;
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+
+        </div>
     </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="web/images-slider">
+                <div id="fwslider">
+                    <div class="slider_container">
+                        <div class="slide">
+                            <img src="web/images/img.jpg" alt=""/>
+                            <div class="slide_content">
+                                <div class="slide_content_wrap">
+                                    <p class="description">New Arrivals</p>
+                                    <p class="description"><a href="#">Browse collection</a></p>
+                                    <div class="slide-btns description">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="web/images/img.jpg" alt=""/>
+                            <div class="slide_content">
+                                <div class="slide_content_wrap">
+                                    <p class="description">New Arrivals</p>
+                                    <p class="description"><a href="#">Browse collection</a></p>
+                                    <div class="slide-btns description">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timers"></div>
+                    <div class="slidePrev"><span> </span></div>
+                    <div class="slideNext"><span> </span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</div> &lt;!&ndash; /container &ndash;&gt;-->
 
-<h2>Welcome!</h2>
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Uczelnie Polecane</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="grid">
+                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+                        <div class="portfolio-wrapper">
+                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
+                               class="b-link-stripe b-animate-go  thickbox">
+                                <img src="web/images/cont1.jpg"/>
+                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
+                                        src="web/images/link-ico.png" alt=""/></h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-center">
+                    </p>
+                    <h2 class="text-center">$350.00</h2>
+                    <p class="text-center"><a href="school.html">Zobacz</a></p>
+                </div>
+            </div>
 
+            <div class="col-md-2">
+                <div class="grid">
+                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+                        <div class="portfolio-wrapper">
+                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
+                               class="b-link-stripe b-animate-go  thickbox">
+                                <img src="web/images/cont2.jpg"/>
+                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
+                                        src="web/images/link-ico.png" alt=""/></h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-center">Big block Lether Bag</p>
+                    <h2 class="text-center">$350.00</h2>
+                    <p class="text-center"><a href="details.html">Buy</a></p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="grid">
+                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+                        <div class="portfolio-wrapper">
+                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
+                               class="b-link-stripe b-animate-go  thickbox">
+                                <img src="web/images/cont3.jpg"/>
+                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
+                                        src="web/images/link-ico.png" alt=""/></h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-center">Big block Lether Bag</p>
+                    <h2 class="text-center">$350.00</h2>
+                    <p class="text-center"><a href="details.html">Buy</a></p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="grid">
+                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+                        <div class="portfolio-wrapper">
+                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
+                               class="b-link-stripe b-animate-go  thickbox">
+                                <img src="web/images/cont4.jpg"/>
+                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
+                                        src="web/images/link-ico.png" alt=""/></h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-center">Big block Lether Bag</p>
+                    <h2 class="text-center">$350.00</h2>
+                    <p class="text-center"><a href="details.html">Buy</a></p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="grid">
+                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+                        <div class="portfolio-wrapper">
+                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
+                               class="b-link-stripe b-animate-go  thickbox">
+                                <img src="web/images/cont2.jpg"/>
+                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
+                                        src="web/images/link-ico.png" alt=""/></h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-center">Big block Lether Bag</p>
+                    <h2 class="text-center">$350.00</h2>
+                    <p class="text-center"><a href="details.html">Buy</a></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="top">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="grid">
+                    <h2>Uczelnie wyższe w miastach</h2>
+                    <p>
+                    <li th:each="city: ${cities}"><a th:text="${city.name }"/></li>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="grid">
+                    <h2>Popularne kierunki</h2>
+                    <p>
+                    <li th:each="faculty: ${facultiesByCity}">
+                        <a th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"
+                           th:href="@{faculty/{id}?cityId={cityId}(id=${faculty.id},cityId=${faculty.cityId})}"/></li>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="grid1 pull-left">
+                    <h2>Kierunki studiów w Polsce</h2>
+                    <address>
+                        <p>
+                        <li th:each="faculty: ${facultiesByCity}">
+                            <a th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"
+                               th:href="@{faculty/{id}?cityId={cityId}(id=${faculty.id},cityId=${faculty.cityId})}"/>
+                        </li>
+                        </p>
+
+                        <p><a href="#">info#@mystore.com</a></p>
+                        <p>555-58746-5475</p>
+                    </address>
+                </div>
+                <div class="grid2 pull-right">
+                    <div class="social-icons-set">
+                        <ul>
+                            <li><a class="facebook" href="#"> </a></li>
+                            <li><a class="twitter" href="#"> </a></li>
+                            <li><a class="vimeo" href="#"> </a></li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-inline pull-left">
+                    <li><a href="#">Terms of Services</a></li>
+                    <li><a href="#">Refunds</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <form class="navbar-form pull-right" role="search">
+
+                    <button type="Find" class="btn btn-default">Find</button>
+                </form>
+            </div>
+        </div>
+        <div class="copy-right text-center">
+        </div>
+    </div>
+</div>
+
+<h2>Welcome <span th:text="${firstName}"/> !</h2>
+Edytuj
+<ul>
+    <li th:each="school: ${schools}"><a th:text="${school.name}" th:href="@{school/{id}/edit(id=${school.id})}"/></li>
+</ul>
+Szkoły
+<ul>
+    <li th:each="school: ${schools}"><a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/></li>
+</ul>
+Szkoły polecane
+<ul>
+    <li th:each="school: ${promo}"><a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/></li>
+</ul>
+Kierunki popularne
 <ul>
     <li th:each="faculty: ${faculties}"><a th:text="${faculty.name + '(' + faculty.count  + ')'}"
                                            th:href="@{faculty/{id}(id=${faculty.id})}"/></li>
 </ul>
-
+Miasta:
+<ul>
+    <li th:each="city: ${cities}"><a th:text="${city.name }"
+    /></li>
+</ul>
+Kierunki w mieście:
 <ul>
     <li th:each="faculty: ${facultiesByCity}">
         <a th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"
            th:href="@{faculty/{id}?cityId={cityId}(id=${faculty.id},cityId=${faculty.cityId})}"/></li>
 </ul>
+TEST
+
+<div th:text="${promo[0].id}"></div>
+<div th:text="${promo[1].id}"></div>
+<div th:text="${promo[2].id}"></div>
+<div th:text="${promo[3].id}"></div>
+<div th:text="${promo[4].id}"></div>
+<!--<li th:each="school: ${promo[0].id}"> <a th:text="${school.name}" th:href="@{school/{id}/edit(id=${school.id})}"/> </li>-->
+
+<table>
+    <tr>
+
+    </tr>
+    <tr th:each="school : ${promo}" th:class="${schoolStat.odd}? 'odd'">
+        <td th:text="${school.name}">Onions</td>
+
+    </tr>
+</table>
+
+
+<!--<li th:each="${promo[2].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>-->
+<!--<li th:each="${promo[3].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>-->
+<!--<li th:each="${promo[4].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>-->
 
 
 <form method="GET" th:action="@{/search}">
@@ -86,6 +357,7 @@
     <p><input type="text" name="facultyName"/></p>
     <p><input type="submit" value="Submit"/></p>
 </form>
+
 
 </body>
 </html>

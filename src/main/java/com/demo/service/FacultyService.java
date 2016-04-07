@@ -2,11 +2,15 @@ package com.demo.service;
 
 import com.demo.dto.FacultyCountByCityDto;
 import com.demo.dto.FacultyCountDto;
+import com.demo.entity.Department;
+import com.demo.entity.Faculty;
 import com.demo.repository.DepartmentFacultyRepository;
 import com.demo.repository.FacultyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
 
@@ -38,4 +42,9 @@ public class FacultyService {
         return facultyCountDtos;
     }
     */
+
+    public List<Faculty> getBySchoolId(Integer schoolId) {
+        return facultyRepository.findBySchoolId(schoolId);
+    }
+
 }

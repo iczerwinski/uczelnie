@@ -19,7 +19,11 @@ public class SchoolRequestDto {
         return address;
     }
 
-    public void setAddress(String address) {
+    public SchoolRequestDto() {
+    }
+
+    public SchoolRequestDto(String name, String address) {
+        this.name = name;
         this.address = address;
     }
 }

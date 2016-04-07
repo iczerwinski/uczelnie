@@ -14,4 +14,5 @@ public class Department {
 
     @ManyToOne
     private School school;
+
 }

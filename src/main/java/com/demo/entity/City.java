@@ -1,5 +1,7 @@
 package com.demo.entity;
 
+import java.util.List;
+
 
 import javax.persistence.*;
 
@@ -33,5 +35,6 @@ public class City {
     public void setName(String name) {
         this.name = name;
     }
+
 
 }

@@ -14,4 +14,5 @@ public class Faculty {
     private Integer id;
 
     private String name;
+
 }

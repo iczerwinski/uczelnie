@@ -4,6 +4,7 @@ import com.demo.dto.SchoolRequestDto;
 import com.demo.entity.School;
 import com.demo.repository.SchoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,6 +40,14 @@ public class SchoolService {
         school.setName(schoolRequestDto.getName());
         school.setAddress(schoolRequestDto.getAddress());
         return schoolRepository.save(school);
+    }
+
+    //  public List<School> findByPromoOrderAsc(Integer schoolId, Integer promo ) {
+    //     return schoolRepository.findByPromoOrderAsc(schoolId, promo);
+    //  }
+
+    public List<School> getSchoolPromo() {
+        return schoolRepository.findOneByOrderByPromoAsc();
     }
 
 
