@@ -1,15 +1,133 @@
 <!DOCTYPE HTML>
+
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Getting Started: Serving Web Content</title>
+
+    <title>Wyniki </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://localhost:8080/web/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <link href="http://localhost:8080/web/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="http://localhost:8080/web/css/theme.css" rel='stylesheet' type='text/css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'/>
+    <script type="text/javascript" src="web/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/web/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/web/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/web/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="http://localhost:8080/web/css/etalage.css"/>
+    <script src="http://localhost:8080/web/js/jquery.etalage.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+
+            $('#etalage').etalage({
+                thumb_image_width: 300,
+                thumb_image_height: 400,
+
+                show_hint: true,
+                click_callback: function (image_anchor, instance_id) {
+                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+                }
+            });
+            // This is for the dropdown list example:
+            $('.dropdownlist').change(function () {
+                etalage_show($(this).find('option:selected').attr('class'));
+            });
+
+        });
+    </script>
 </head>
 <body>
-<h2>Search results</h2>
+<div class="header-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="logo"><a href="localhost:8080"><img src="web/images/logo.png" alt=""/></a></div>
+            </div>
+            <div class="col-md-8">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header"><span class="text-left"><a href="#">MENU</a></span>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                    data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <div class="btn-group show-on-hover">
+                                        <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown">
+                                            Spis Uczelni<span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="/search?schoolTypeId=1">Wyższe</a></li>
+                                            <li><a href="/search?schoolTypeId=2">Policealne</a></li>
+                                            <li><a href="/search?schoolTypeId=3">Językowe</a></li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="about.html">Wyszukiwarka</a></li>
+                                <li><a href="artykuly.html">Artykuły</a></li>
+                                <li><a href="contact.html">Kontakt</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="main">
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <h2>Lista</h2>
+            </div>
+        </div>
+        <div class="row">
+            <li th:each="school: ${schools}">
+                <hr/>
+                <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/></li>
 
 
-<ul>
-    <li th:each="school: ${schools}"><a th:text="${school.name}" th:href="@{school/{id}(id=${school.id})}"/></li>
-</ul>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-inline pull-left">
+                    <li><a href="#">Terms of Services</a></li>
+                    <li><a href="#">Refunds</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="copy-right text-center">
+        </div>
+    </div>
+</div>
+<li th:each="school: ${schools}"><a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/></li>
+
 </body>
 </html>

@@ -2,9 +2,9 @@ package com.demo.service;
 
 import com.demo.dto.SchoolRequestDto;
 import com.demo.entity.School;
+import com.demo.repository.CityRepository;
 import com.demo.repository.SchoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +14,8 @@ public class SchoolService {
 
     @Autowired
     SchoolRepository schoolRepository;
+    @Autowired
+    CityRepository cityRepository;
 
     public void add(SchoolRequestDto schoolRequestDto) {
         School school = new School();
@@ -26,9 +28,11 @@ public class SchoolService {
         return schoolRepository.findAll();
     }
 
-    public List<School> getSchoolsBySchollTypeIdAndFacultyName(Integer schoolTypeId, String facultyName) {
-        return schoolRepository.findBySchoolTypeIdAndFacultyName(schoolTypeId, facultyName == null ? null : facultyName.toLowerCase());
+
+    public List<School> getSchoolsBySchollTypeIdAndFacultyNameAndCityNameAndSchoolName(Integer schoolTypeId, String facultyName, String cityName, String schoolName) {
+        return schoolRepository.findBySchoolTypeIdAndFacultyNameAndCityNameAndSchoolName(schoolTypeId, facultyName == null ? null : facultyName.toLowerCase(), cityName == null ? null : cityName.toLowerCase(), schoolName == null ? null : schoolName.toLowerCase());
     }
+
 
     public School get(Integer schoolId) {
         return schoolRepository.findOne(schoolId);
@@ -48,6 +52,14 @@ public class SchoolService {
 
     public List<School> getSchoolPromo() {
         return schoolRepository.findOneByOrderByPromoAsc();
+    }
+
+    public List<School> getSchoolsByCityId(Integer cityId) {
+        return schoolRepository.findSchoolsByCityId(cityId);
+    }
+
+    public List<School> getSchoolsByFacultyId(Integer facultyId) {
+        return schoolRepository.findSchoolsByFacultyId(facultyId);
     }
 
 

@@ -7535,4 +7535,8 @@ button.close {
     }
 }
 
+.logos {
+    max-width: 148px;
+    max-height: 88px;
+}
 /*# sourceMappingURL=bootstrap.css.map */

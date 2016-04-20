@@ -41,6 +41,9 @@ public class School {
     @ManyToOne
     public City city;
 
+    @OneToOne
+    public Gallery gallery;
+
     @OneToMany(mappedBy = "school")
     private List<Department> departments;
 
@@ -87,6 +90,7 @@ public class School {
     public Boolean getIsPublic() {
         return isPublic;
     }
+
 
     public void setName(String name) {
         this.name = name;

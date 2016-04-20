@@ -15,6 +15,8 @@ public class DepartmentFaculty {
 
     @ManyToOne
     private Faculty faculty;
+    @ManyToOne
+    private SchoolType schoolType;
 
     @ManyToOne
     private StudyMode firstLevelEngineer;

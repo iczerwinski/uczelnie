@@ -54,26 +54,28 @@
                                             Spis Uczelni<span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Wyższe</a></li>
-                                            <li><a href="#">Podyplomowe</a></li>
-                                            <li><a href="#">Policealne</a></li>
-                                            <li><a href="#">Językowe</a></li>
+                                            <li><a href="/search?schoolTypeId=1">Wyższe</a></li>
+                                            <li><a href="/search?schoolTypeId=2">Policealne</a></li>
+                                            <li><a href="/search?schoolTypeId=3">Językowe</a></li>
+
                                         </ul>
                                     </div>
                                 </li>
-                                <li><a href="about.html">Wyszukiwarka</a></li>
+                                <li><a href="searcher.html">Wyszukiwarka</a></li>
+                                <li><a href="artykuly.html">Artykuły</a></li>
                                 <li><a href="contact.html">Kontakt</a></li>
+
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <div class="right">
-                    <ul class="list-unstyled">
-                        <li class="a text-left"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                        </li>
-                        <li><a href="#">Checkout</a></li>
-                    </ul>
-                </div>
+                <!--<div class="right">-->
+                <!--<ul class="list-unstyled">-->
+                <!--&lt;!&ndash;<li class="a text-left"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                <!--<li><a href="contact.html">Kontakt</a></li>-->
+                <!--<li><a href="artykuly.html">Artykuły</a></li>                    </ul>-->
+                <!--</div>-->
             </div>
 
 
@@ -82,39 +84,39 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <div class="web/images-slider">
-                <div id="fwslider">
-                    <div class="slider_container">
-                        <div class="slide">
-                            <img src="web/images/img.jpg" alt=""/>
-                            <div class="slide_content">
-                                <div class="slide_content_wrap">
-                                    <p class="description">New Arrivals</p>
-                                    <p class="description"><a href="#">Browse collection</a></p>
-                                    <div class="slide-btns description">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img src="web/images/img.jpg" alt=""/>
-                            <div class="slide_content">
-                                <div class="slide_content_wrap">
-                                    <p class="description">New Arrivals</p>
-                                    <p class="description"><a href="#">Browse collection</a></p>
-                                    <div class="slide-btns description">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timers"></div>
-                    <div class="slidePrev"><span> </span></div>
-                    <div class="slideNext"><span> </span></div>
-                </div>
-            </div>
-        </div>
+        <!--<div class="col-md-12">-->
+        <!--<div class="web/images-slider">-->
+        <!--<div id="fwslider">-->
+        <!--<div class="slider_container">-->
+        <!--<div class="slide">-->
+        <!--&lt;!&ndash;<img src="web/images/img.jpg" alt=""/>&ndash;&gt;-->
+        <!--<div class="slide_content">-->
+        <!--<div class="slide_content_wrap">-->
+        <!--<p class="description">New Arrivals</p>-->
+        <!--<p class="description"><a href="#">Browse collection</a></p>-->
+        <!--<div class="slide-btns description">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="slide">-->
+        <!--&lt;!&ndash;<img src="web/images/img.jpg" alt=""/>&ndash;&gt;-->
+        <!--<div class="slide_content">-->
+        <!--<div class="slide_content_wrap">-->
+        <!--<p class="description">New Arrivals</p>-->
+        <!--<p class="description"><a href="#">Browse collection</a></p>-->
+        <!--<div class="slide-btns description">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="timers"></div>-->
+        <!--<div class="slidePrev"><span> </span></div>-->
+        <!--<div class="slideNext"><span> </span></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
     </div>
 </div>
 
@@ -127,98 +129,33 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
-                <div class="grid">
-                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-                        <div class="portfolio-wrapper">
-                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
-                               class="b-link-stripe b-animate-go  thickbox">
-                                <img src="web/images/cont1.jpg"/>
-                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
-                                        src="web/images/link-ico.png" alt=""/></h2>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="text-center">
-                    </p>
-                    <h2 class="text-center">$350.00</h2>
-                    <p class="text-center"><a href="school.html">Zobacz</a></p>
-                </div>
-            </div>
 
-            <div class="col-md-2">
+            <div class="col-md-2" th:each="school: ${promo}" th:unless="${schoolStat.index > 4}">
                 <div class="grid">
                     <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
                         <div class="portfolio-wrapper">
                             <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
                                class="b-link-stripe b-animate-go  thickbox">
-                                <img src="web/images/cont2.jpg"/>
+                                <div class="logos"><img th:src="${school.logoUrl}"/></div>
+
+                                <!--<img th:src="@{${school.logoUrl}}" >-->
                                 <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
                                         src="web/images/link-ico.png" alt=""/></h2>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <p class="text-center">Big block Lether Bag</p>
-                    <h2 class="text-center">$350.00</h2>
-                    <p class="text-center"><a href="details.html">Buy</a></p>
+                    <!--<a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/>-->
+                    <!--<h2 class="text-center"> <a th:text="${school.name}"  th:href="@{school/{id}/(id=${school.id})}"/></h2>-->
+                    <!--<h3 class="text-center"> <a th:text="${school.name}"  th:href="@{school/{id}/(id=${school.id})}" /></h3>-->
+                    <h4 class="text-center" th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/>
+                    <p class="text-center" th:if="${school.isPublic} == false" th:text="'Uczelnia '+'Niepubliczna'"/>
+                    <p class="text-center" th:if="${school.isPublic} == true" th:text="'Uczelnia '+'Publiczna'"/>
+                    <h5 class="text-center" th:text="${school.city.name}" th:href="@{school/{id}/(id=${school.id})}"/>
+                    <!--<h2 class="text-center"> <a th:text="${school.name}"  th:href="@{school/{id}/(id=${school.id})}"/></h2>-->
+
+                    <p class="text-center"><a th:text="Zobacz" th:href="@{school/{id}/(id=${school.id})}"/></p>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="grid">
-                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-                        <div class="portfolio-wrapper">
-                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
-                               class="b-link-stripe b-animate-go  thickbox">
-                                <img src="web/images/cont3.jpg"/>
-                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
-                                        src="web/images/link-ico.png" alt=""/></h2>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="text-center">Big block Lether Bag</p>
-                    <h2 class="text-center">$350.00</h2>
-                    <p class="text-center"><a href="details.html">Buy</a></p>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="grid">
-                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-                        <div class="portfolio-wrapper">
-                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
-                               class="b-link-stripe b-animate-go  thickbox">
-                                <img src="web/images/cont4.jpg"/>
-                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
-                                        src="web/images/link-ico.png" alt=""/></h2>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="text-center">Big block Lether Bag</p>
-                    <h2 class="text-center">$350.00</h2>
-                    <p class="text-center"><a href="details.html">Buy</a></p>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="grid">
-                    <div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-                        <div class="portfolio-wrapper">
-                            <a data-toggle="modal" data-target=".bs-example-modal-md" href="#"
-                               class="b-link-stripe b-animate-go  thickbox">
-                                <img src="web/images/cont2.jpg"/>
-                                <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img
-                                        src="web/images/link-ico.png" alt=""/></h2>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="text-center">Big block Lether Bag</p>
-                    <h2 class="text-center">$350.00</h2>
-                    <p class="text-center"><a href="details.html">Buy</a></p>
-                </div>
-                <div class="clearfix"></div>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -227,9 +164,13 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="grid">
-                    <h2>Uczelnie wyższe w miastach</h2>
+                    <h2>Uczelnie w miastach</h2>
                     <p>
-                    <li th:each="city: ${cities}"><a th:text="${city.name }"/></li>
+                    <div class="ttt">
+                        <li th:each="city: ${cities}"><a th:text="${city.name }"
+                                                         th:href="@{/list/city/{id}/(id=${city.id})}"/></li>
+                    </div>
+
                     </p>
                 </div>
             </div>
@@ -237,37 +178,26 @@
                 <div class="grid">
                     <h2>Popularne kierunki</h2>
                     <p>
-                    <li th:each="faculty: ${facultiesByCity}">
-                        <a th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"
-                           th:href="@{faculty/{id}?cityId={cityId}(id=${faculty.id},cityId=${faculty.cityId})}"/></li>
+
+                    <ul>
+                        <li th:each="faculty: ${faculties}"><a th:text="${faculty.name + '(' + faculty.count  + ')'}"
+                                                               th:href="@{/list/faculty/{id}(id=${faculty.id})}"/></li>
+
+                    </ul>
                     </p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="grid1 pull-left">
-                    <h2>Kierunki studiów w Polsce</h2>
-                    <address>
+                    <h2>Kierunki studiów w mieście</h2>
                         <p>
-                        <li th:each="faculty: ${facultiesByCity}">
-                            <a th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"
-                               th:href="@{faculty/{id}?cityId={cityId}(id=${faculty.id},cityId=${faculty.cityId})}"/>
-                        </li>
+                    <li th:each="faculty: ${facultiesByCity}"><a
+                            th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"
+                            th:href="@{/list/facultycity/{id}(id=${faculty.id})}"/></li>
                         </p>
 
-                        <p><a href="#">info#@mystore.com</a></p>
-                        <p>555-58746-5475</p>
-                    </address>
                 </div>
-                <div class="grid2 pull-right">
-                    <div class="social-icons-set">
-                        <ul>
-                            <li><a class="facebook" href="#"> </a></li>
-                            <li><a class="twitter" href="#"> </a></li>
-                            <li><a class="vimeo" href="#"> </a></li>
-                            <div class="clear"></div>
-                        </ul>
-                    </div>
-                </div>
+
             </div>
             <div class="clearfix"></div>
         </div>
@@ -316,7 +246,8 @@ Kierunki popularne
 Miasta:
 <ul>
     <li th:each="city: ${cities}"><a th:text="${city.name }"
-    /></li>
+                                     th:href="@{list/city/{id}/(id=${city.id})}"/></li>
+
 </ul>
 Kierunki w mieście:
 <ul>
@@ -324,13 +255,8 @@ Kierunki w mieście:
         <a th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"
            th:href="@{faculty/{id}?cityId={cityId}(id=${faculty.id},cityId=${faculty.cityId})}"/></li>
 </ul>
-TEST
 
-<div th:text="${promo[0].id}"></div>
-<div th:text="${promo[1].id}"></div>
-<div th:text="${promo[2].id}"></div>
-<div th:text="${promo[3].id}"></div>
-<div th:text="${promo[4].id}"></div>
+
 <!--<li th:each="school: ${promo[0].id}"> <a th:text="${school.name}" th:href="@{school/{id}/edit(id=${school.id})}"/> </li>-->
 
 <table>
@@ -348,16 +274,17 @@ TEST
 <!--<li th:each="${promo[3].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>-->
 <!--<li th:each="${promo[4].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>-->
 
-
 <form method="GET" th:action="@{/search}">
-    <p>School type:
+    <p>Typ szkoły:
         <select th:name="schoolTypeId">
             <option th:each="schoolType: ${schoolTypes}" th:text="${schoolType.name}" th:value="${schoolType.id}"/>
         </select></p>
-    <p><input type="text" name="facultyName"/></p>
+    <p>Kierunek:<input type="text" name="facultyName"/></p>
     <p><input type="submit" value="Submit"/></p>
 </form>
 
-
+<!--th:href="@{/list?cityId={id} (id=${city.id})}"-->
+th:href="@{/list?cityId={id} (id=${city.id})}"
+th:href="@{list/{id}/(id=${school.id})}"
 </body>
 </html>

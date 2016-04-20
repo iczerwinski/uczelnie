@@ -21,5 +21,8 @@ public class SchoolTypeService {
         return schoolTypeRepository.findOne(schoolId);
     }
 
+//   public List<SchoolType> getBySchoolId(Integer schoolId) {
+//       return schoolTypeRepository.findBySchoolId(schoolId);
+//   }
 
 }
