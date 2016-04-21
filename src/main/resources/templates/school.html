@@ -116,16 +116,13 @@
                     </div></div></div></div>
                 <h4>Popularne kierunki</h4>
                 <div class="row row1 scroll-pane" style="overflow: hidden; padding: 0px; width: 283px;">
-
-
-                    <div class="web/jspContainer" style="width: 283px; height: 200px;">
+                    <div class="web/jspContainer" style="width: 283px;">
                         <div class="web/jspPane" style="padding: 20px; top: 0px; left: 0px; width: 243px;">
                             <ul>
-                                <li th:each="faculty: ${faculties}"><a
-                                        th:text="${faculty.name + '(' + faculty.count  + ')'}"
-                                        th:href="@{faculty/{id}(id=${faculty.id})}"/></li>
-                            </ul>
+                                <li th:each="faculty: ${faculties}"><a th:text="${faculty.name + '(' + faculty.count  + ')'}"
+                                                                       th:href="@{/list/faculty/{id}(id=${faculty.id})}"/></li>
 
+                            </ul>
                             <div class="col col-4">
                     </div><div class="col col-4">
 
@@ -135,13 +132,9 @@
 
 
                     <div class="web/jspContainer" style="width: 283px; height: 200px;"><div class="web/jspPane" style="padding: 20px; top: 0px; left: 0px; width: 243px;"><div class="col col-4">
-                        <label class="checkbox"><input type="checkbox" name="checkbox" checked=""/><i></i>Athletic (20)</label>
-                    </div><div class="col col-4">
-                        <label class="checkbox"><input type="checkbox" name="checkbox"/><i></i>Ballerina (5)</label>
-                        <label class="checkbox"><input type="checkbox" name="checkbox"/><i></i>Pumps (7)</label>
-                        <label class="checkbox"><input type="checkbox" name="checkbox"/><i></i>High Tops (2)</label>
-                        <label class="checkbox"><input type="checkbox" name="checkbox"/><i></i>Other (1)</label>
-                    </div></div></div></div>
+                     <ul>   <li th:each="school: ${similar}"><a th:text="${school.name}" th:href="@{/school/{id}/(id=${school.id})}"/></li>
+                        </ul>
+                       </div></div></div></div>
             </section>
         </div>
         <div class="cont span_2_of_3">
@@ -210,7 +203,7 @@
                     </form>
                 </div>
                 <ul class="add-to-links list-unstyled">
-                    <li><img src="http://localhost:8080/web/images/wish.png" alt=""/><a href="#">Dane Teleadresowe</a>
+                    <li>     <img src="http://localhost:8080/web/images/wish.png" alt=""/><a href="#">Dane Teleadresowe</a>
                     </li>
                 </ul>
                 <p class="m_desc" th:text="${school.address}"/>
@@ -230,18 +223,12 @@
             <p class="m_text" th:text="${school.description}"/>
         </div>
         <div class="toogle">
-            <h3 class="m_3">Product Reviews</h3>
-            <p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-                exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
-                iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
-                facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
-                augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue
-                nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+            <h3 class="m_3">Informacja 2 </h3>
+            <p class="m_text"></p>
         </div>
     </div>
 
-    <div class="nbs-flexisel-container">
+    <div class="nbs-flexisel-container" th:each="school: ${school}" th:unless="${schoolStat.index > 4}">
         <div class="nbs-flexisel-inner">
             <ul id="flexiselDemo3" class="nbs-flexisel-ul" style="left: -195.2px; display: block;">
 
@@ -322,7 +309,7 @@
     </div>
 </div>
 </div>
-<h2 th:text="${school.name}" />
+<h2 th:text="${school.name}" />c
 <div th:text="${school.logoUrl}" />
 <div th:text="${school.address}" />
 <div th:text="${school.isPublic}" />

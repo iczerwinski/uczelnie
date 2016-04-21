@@ -393,7 +393,7 @@ img {
     display: inline-block;
     max-width: 100%;
     height: auto;
-    padding: 4px;
+    /*padding: 4px;*/
     line-height: 1.42857143;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -5393,9 +5393,9 @@ a.list-group-item.active > .badge,
 }
 
 .thumbnail {
-    display: block;
+    /*display: block;*/
     padding: 4px;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     line-height: 1.42857143;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -7065,34 +7065,34 @@ button.close {
     color: #545455 !important;
 }
 
-.thumbnail2 {
-    /*max-height: 90px;*/
-    /*max-width: 90px;*/
-    /*float: left;*/
-    /*box-sizing: border-box;*/
-    /*display:inline;*/
-
-    width: 150px;
-    height: 90px;
-    margin: 0 10px 0 0;
+.thumbnail {
+    max-height: 100px;
+    max-width: 100px;
     float: left;
+
 }
 
 .list {
-    /*min-height: 90px;*/
-    /*min-width: 90px;*/
-    /*box-sizing: border-box;*/
-    /*display:inline;*/
-    /*overflow: hidden;*/
-
-    padding: 0 0 10px 0;
-    margin: 0 0 10px 0;
-    border-bottom: 1px solid #b9bed3;
-    overflow: hidden;
+    float: left;
+    width: 100%;
+    line-height: 100px;
 }
 
-.searchresults {
-    clear: both;
+#list ul.nav li a, ul.nav li a:visited {
+    color: #545455 !important;
+}
+
+#list ul.nav li a:hover, ul.nav li a:active {
+    color: #545455 !important;
+}
+
+#list a {
+    color: #545455 !important;
+}
+
+.schoolsearch {
+    display: block;
+    float: left;
 
 }
 

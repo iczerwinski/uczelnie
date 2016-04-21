@@ -58,6 +58,7 @@ public class SchoolService {
         return schoolRepository.findSchoolsByCityId(cityId);
     }
 
+
     public List<School> getSchoolsByFacultyId(Integer facultyId) {
         return schoolRepository.findSchoolsByFacultyId(facultyId);
     }

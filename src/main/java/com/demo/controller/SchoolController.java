@@ -33,6 +33,7 @@ public class SchoolController {
     @RequestMapping(method = RequestMethod.GET, value = "/{id}/edit")
     public String editPage(Model model, @PathVariable(value = "id") Integer schoolId) {
         model.addAttribute("school", schoolService.get(schoolId));
+        model.addAttribute("cities", cityService.getCities());
         return "schoolEdit";
     }
 
@@ -43,14 +44,20 @@ public class SchoolController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
-    public String schoolInfoPage(Model model, @PathVariable(value = "id") Integer schoolId) {
+    public String schoolInfoPage(Model model, @PathVariable(value = "id") Integer schoolId, Integer cityId) {
         model.addAttribute("school", schoolService.get(schoolId));
         model.addAttribute("schoolFaculties", facultyService.getBySchoolId(schoolId));
         model.addAttribute("cities", cityService.getCities());
         model.addAttribute("schoolTypes", schoolTypeService.getSchoolTypes());
-//        model.addAttribute("faculties", facultyService.findFaculties());
+        model.addAttribute("faculties", facultyService.findFaculties());
+//        model.addAttribute("similar", schoolService.getSchoolsByCityId(cityId));
         return "school";
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/school/{id}")
+    public String sidebarsimilar(Model model, @PathVariable(value = "id") Integer cityId) {
+        model.addAttribute("similar", schoolService.getSchoolsByCityId(cityId));
+        return "school";
+    }
 
 }

@@ -21,7 +21,7 @@ public class SearchPageController {
     @RequestMapping(method = RequestMethod.GET, value = "/search")
     public String search(Model model, @RequestParam("schoolTypeId") Integer schoolTypeId, @RequestParam(value = "facultyName", required = false) String facultyName, @RequestParam(value = "cityName", required = false) String cityName, @RequestParam(value = "schoolName", required = false) String schoolName) {
         model.addAttribute("schools", schoolService.getSchoolsBySchollTypeIdAndFacultyNameAndCityNameAndSchoolName(schoolTypeId, facultyName, cityName, schoolName));
-        model.addAttribute("cities", cityService.getCities());
+//        model.addAttribute("cities", cityService.getCities());
         return "search";
     }
 
