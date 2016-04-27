@@ -30,14 +30,5 @@ public class FacultyPageController {
 //        model.addAttribute("facultiesByDepartment", facultyService.getByDepartmentId(departmentId));
 //        return "faculty";
 //    }
-//@RequestMapping(method = RequestMethod.GET, value = "/offer/department/{id}")
-//public String facultiesdepartmentpage (Model model, @PathVariable(value = "id") Integer departmentId, Integer schoolId) {
-//    model.addAttribute("facultiesByDepartment", facultyService.getByDepartmentId(departmentId));
-//    model.addAttribute("school", schoolService.get(schoolId));
-//    model.addAttribute("schoolFaculties", facultyService.getBySchoolId(schoolId));
-//    model.addAttribute("cities", cityService.getCities());
-//    model.addAttribute("schoolTypes", schoolTypeService.getSchoolTypes());
-//    model.addAttribute("faculties", facultyService.findFaculties());
-//    return "faculty";
-//}
+
 }
