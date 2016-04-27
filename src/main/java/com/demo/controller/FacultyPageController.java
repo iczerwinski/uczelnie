@@ -30,5 +30,5 @@ public class FacultyPageController {
 //        model.addAttribute("facultiesByDepartment", facultyService.getByDepartmentId(departmentId));
 //        return "faculty";
 //    }
-
+//s
 }
