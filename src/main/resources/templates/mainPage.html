@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="logo"><a href="index.html"><img src="web/images/logo.png" alt=""/></a></div>
+                <!--<div class="logo"><a href="index.html"><img src="web/images/logo.png" alt=""/></a></div>-->
             </div>
             <div class="col-md-8">
                 <nav class="navbar navbar-default" role="navigation">
@@ -148,7 +148,9 @@
                     <!--<a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/>-->
                     <!--<h2 class="text-center"> <a th:text="${school.name}"  th:href="@{school/{id}/(id=${school.id})}"/></h2>-->
                     <!--<h3 class="text-center"> <a th:text="${school.name}"  th:href="@{school/{id}/(id=${school.id})}" /></h3>-->
-                    <h4 class="text-center" th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/>
+                    <div class="promo"><h4 class="text-center"><a th:text="${school.name}"
+                                                                  th:href="@{school/{id}/(id=${school.id})}"/></h4>
+                    </div>
                     <p class="text-center" th:if="${school.isPublic} == false" th:text="'Uczelnia '+'Niepubliczna'"/>
                     <p class="text-center" th:if="${school.isPublic} == true" th:text="'Uczelnia '+'Publiczna'"/>
                     <h5 class="text-center" th:text="${school.city.name}" th:href="@{school/{id}/(id=${school.id})}"/>
@@ -225,66 +227,66 @@
     </div>
 </div>
 
-<h2>Welcome <span th:text="${firstName}"/> !</h2>
-Edytuj
-<ul>
-    <li th:each="school: ${schools}"><a th:text="${school.name}" th:href="@{school/{id}/edit(id=${school.id})}"/></li>
-</ul>
-Szkoły
-<ul>
-    <li th:each="school: ${schools}"><a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/></li>
-</ul>
-Szkoły polecane
-<ul>
-    <li th:each="school: ${promo}"><a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/></li>
-</ul>
-Kierunki popularne
-<ul>
-    <li th:each="faculty: ${faculties}"><a th:text="${faculty.name + '(' + faculty.count  + ')'}"
-                                           th:href="@{faculty/{id}(id=${faculty.id})}"/></li>
-</ul>
-Miasta:
-<ul>
-    <li th:each="city: ${cities}"><a th:text="${city.name }"
-                                     th:href="@{list/city/{id}/(id=${city.id})}"/></li>
+<!--<h2>Welcome <span th:text="${firstName}"/> !</h2>-->
+<!--Edytuj-->
+<!--<ul>-->
+<!--<li th:each="school: ${schools}"><a th:text="${school.name}" th:href="@{school/{id}/edit(id=${school.id})}"/></li>-->
+<!--</ul>-->
+<!--Szkoły-->
+<!--<ul>-->
+<!--<li th:each="school: ${schools}"><a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/></li>-->
+<!--</ul>-->
+<!--Szkoły polecane-->
+<!--<ul>-->
+<!--<li th:each="school: ${promo}"><a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/></li>-->
+<!--</ul>-->
+<!--Kierunki popularne-->
+<!--<ul>-->
+<!--<li th:each="faculty: ${faculties}"><a th:text="${faculty.name + '(' + faculty.count  + ')'}"-->
+<!--th:href="@{faculty/{id}(id=${faculty.id})}"/></li>-->
+<!--</ul>-->
+<!--Miasta:-->
+<!--<ul>-->
+<!--<li th:each="city: ${cities}"><a th:text="${city.name }"-->
+<!--th:href="@{list/city/{id}/(id=${city.id})}"/></li>-->
 
-</ul>
-Kierunki w mieście:
-<ul>
-    <li th:each="faculty: ${facultiesByCity}">
-        <a th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"
-           th:href="@{faculty/{id}?cityId={cityId}(id=${faculty.id},cityId=${faculty.cityId})}"/></li>
-</ul>
-
-
-<!--<li th:each="school: ${promo[0].id}"> <a th:text="${school.name}" th:href="@{school/{id}/edit(id=${school.id})}"/> </li>-->
-
-<table>
-    <tr>
-
-    </tr>
-    <tr th:each="school : ${promo}" th:class="${schoolStat.odd}? 'odd'">
-        <td th:text="${school.name}">Onions</td>
-
-    </tr>
-</table>
+<!--</ul>-->
+<!--Kierunki w mieście:-->
+<!--<ul>-->
+<!--<li th:each="faculty: ${facultiesByCity}">-->
+<!--<a th:text="${faculty.cityName + ' - ' + faculty.name + '(' + faculty.count  + ')'}"-->
+<!--th:href="@{faculty/{id}?cityId={cityId}(id=${faculty.id},cityId=${faculty.cityId})}"/></li>-->
+<!--</ul>-->
 
 
-<!--<li th:each="${promo[2].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>-->
-<!--<li th:each="${promo[3].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>-->
-<!--<li th:each="${promo[4].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>-->
+<!--&lt;!&ndash;<li th:each="school: ${promo[0].id}"> <a th:text="${school.name}" th:href="@{school/{id}/edit(id=${school.id})}"/> </li>&ndash;&gt;-->
 
-<form method="GET" th:action="@{/search}">
-    <p>Typ szkoły:
-        <select th:name="schoolTypeId">
-            <option th:each="schoolType: ${schoolTypes}" th:text="${schoolType.name}" th:value="${schoolType.id}"/>
-        </select></p>
-    <p>Kierunek:<input type="text" name="facultyName"/></p>
-    <p><input type="submit" value="Submit"/></p>
-</form>
+<!--<table>-->
+<!--<tr>-->
 
+<!--</tr>-->
+<!--<tr th:each="school : ${promo}" th:class="${schoolStat.odd}? 'odd'">-->
+<!--<td th:text="${school.name}">Onions</td>-->
+
+<!--</tr>-->
+<!--</table>-->
+
+
+<!--&lt;!&ndash;<li th:each="${promo[2].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li th:each="${promo[3].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li th:each="${promo[4].id}">"> <a th:text="${school.name}" th:href="@{school/{id}/(id=${school.id})}"/> </li>&ndash;&gt;-->
+
+<!--<form method="GET" th:action="@{/search}">-->
+<!--<p>Typ szkoły:-->
+<!--<select th:name="schoolTypeId">-->
+<!--<option th:each="schoolType: ${schoolTypes}" th:text="${schoolType.name}" th:value="${schoolType.id}"/>-->
+<!--</select></p>-->
+<!--<p>Kierunek:<input type="text" name="facultyName"/></p>-->
+<!--<p><input type="submit" value="Submit"/></p>-->
+<!--</form>-->
+
+<!--&lt;!&ndash;th:href="@{/list?cityId={id} (id=${city.id})}"&ndash;&gt;-->
 <!--th:href="@{/list?cityId={id} (id=${city.id})}"-->
-th:href="@{/list?cityId={id} (id=${city.id})}"
-th:href="@{list/{id}/(id=${school.id})}"
+<!--th:href="@{list/{id}/(id=${school.id})}"-->
 </body>
 </html>

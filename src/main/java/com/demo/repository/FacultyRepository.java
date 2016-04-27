@@ -57,4 +57,13 @@ public interface FacultyRepository extends CrudRepository<Faculty, Integer> {
             "GROUP BY df.faculty " +
             "ORDER BY df.faculty.name ")
     List<Faculty> findBySchoolId(@Param("schoolId") Integer schoolId);
+
+    @Query("SELECT df.faculty " +
+            "FROM DepartmentFaculty AS df " +
+            "WHERE df.department.id = :departmentId " +
+            "GROUP BY df.faculty " +
+            "ORDER BY df.faculty.name ")
+    List<Faculty> findByDepartmentId(@Param("departmentId") Integer departmentId);
+
+
 }

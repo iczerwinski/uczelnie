@@ -7,13 +7,18 @@
     <title th:text="${school.name}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <link href="http://localhost:8080/web/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-    <link href="http://localhost:8080/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="http://localhost:8080/web/css/theme.css" rel='stylesheet' type='text/css' />
+    <link href="http://localhost:8080/web/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <link href="http://localhost:8080/web/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="http://localhost:8080/web/css/theme.css" rel='stylesheet' type='text/css'/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'/>
-            <script type="text/javascript" src="web/js/jquery.min.js"></script>
+    <script type="text/javascript" src="web/js/jquery.min.js"></script>
     <script type="text/javascript" src="http://localhost:8080/web/js/bootstrap.js"></script>
     <script type="text/javascript" src="http://localhost:8080/web/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://localhost:8080/web/js/jquery.min.js"></script>
@@ -21,20 +26,20 @@
     <link rel="stylesheet" href="http://localhost:8080/web/css/etalage.css"/>
     <script src="http://localhost:8080/web/js/jquery.etalage.min.js"></script>
     <script>
-        jQuery(document).ready(function($){
+        jQuery(document).ready(function ($) {
 
             $('#etalage').etalage({
                 thumb_image_width: 300,
                 thumb_image_height: 400,
 
                 show_hint: true,
-                click_callback: function(image_anchor, instance_id){
-                    alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+                click_callback: function (image_anchor, instance_id) {
+                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
                 }
             });
             // This is for the dropdown list example:
-            $('.dropdownlist').change(function(){
-                etalage_show( $(this).find('option:selected').attr('class') );
+            $('.dropdownlist').change(function () {
+                etalage_show($(this).find('option:selected').attr('class'));
             });
 
         });
@@ -45,7 +50,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="logo"><a href="localhost:8080"><img src="web/images/logo.png" alt=""/></a></div>
+                <!--<div class="logo"><a href="localhost:8080"><img src="web/images/logo.png" alt=""/></a></div>-->
             </div>
             <div class="col-md-8">
                 <nav class="navbar navbar-default" role="navigation">
@@ -101,67 +106,67 @@
         <div class="rsidebar span_1_of_left">
             <section class="sky-form">
                 <div class="sidebar_school">
-                <h4>Miasta</h4>
-                <div class="row row1 scroll-pane" style="overflow: hidden; padding: 0px; width: 283px;">
+                    <h4>Miasta</h4>
+                    <div class="row row1 scroll-pane" style="overflow: hidden; padding: 0px; width: 283px;">
 
-                    <div class="web/jspContainer" style="width: 283px; ">
-                        <div class="web/jspPane"
-                             style="padding: 20px; top: 0px; left: 0px; width: 243px;margin-top: 7px;">
-                            <div class="col col-4">
-                                <ul>
+                        <div class="web/jspContainer" style="width: 283px; ">
+                            <div class="web/jspPane"
+                                 style="padding: 20px; top: 0px; left: 0px; width: 243px;margin-top: 7px;">
+                                <div class="col col-4">
+                                    <ul>
 
-                                    <li th:each="city: ${cities}"><a th:text="${city.name }"
-                                                                     th:href="@{/list/city/{id}/(id=${city.id})}"/></li>
-                                </ul>
-                    </div><div class="col col-4">
+                                        <li th:each="city: ${cities}"><a th:text="${city.name }"
+                                                                         th:href="@{/list/city/{id}/(id=${city.id})}"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col col-4">
 
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="sidebar_school">
-                <h4>Popularne kierunki</h4>
-                <div class="row row1 scroll-pane" style="overflow: hidden; padding: 0px; width: 283px;">
-                    <div class="web/jspContainer" style="width: 283px;">
-                        <div class="web/jspPane"
-                             style="padding: 20px; top: 0px; left: 0px; width: 243px;margin-top: 8px;">
-                            <ul>
-                                <li th:each="faculty: ${faculties}"><a th:text="${faculty.name + '(' + faculty.count  + ')'}"
-                                                                       th:href="@{/list/faculty/{id}(id=${faculty.id})}"/></li>
-
-                            </ul>
-                            <div class="col col-4">
-                    </div><div class="col col-4">
-
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="sidebar_school">
-
-                    <h4>Województwa</h4>
-                <div class="row row1 scroll-pane" style="overflow: hidden; padding: 0px; width: 283px;">
-
-
-                    <div class="web/jspContainer" style="width: 283px; height: 330px;">
-                        <div class="web/jspPane"
-                             style="padding: 20px; top: 0px; left: 0px; width: 243px;margin-top: 7px;">
-                            <div class="col col-4">
-                     <ul>   <li th:each="school: ${similar}"><a th:text="${school.name}" th:href="@{/school/{id}/(id=${school.id})}"/></li>
-                        </ul>
-                                <ul>
-                                    <li th:each="voivodeship: ${voivodeships}"><a th:text="${voivodeship.name }"
-                                                                                  th:href="@{/list/voivodeship/{id}/(id=${voivodeship.id})}"/>
-                                    </li>
-                                    <!--<li th:each="voivodeship: ${voivodeships}"><a th:text="${voivodeship.name }"-->
-                                    <!--th:href="@{/list/voivodeship/{id}/(id=${voivodeship.id})}"/></li>-->
-                                </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="sidebar_school">
+                    <h4>Popularne kierunki</h4>
+                    <div class="row row1 scroll-pane" style="overflow: hidden; padding: 0px; width: 283px;">
+                        <div class="web/jspContainer" style="width: 283px;">
+                            <div class="web/jspPane"
+                                 style="padding: 20px; top: 0px; left: 0px; width: 243px;margin-top: 7px;">
+                                <ul>
+                                    <li th:each="faculty: ${faculties}"><a
+                                            th:text="${faculty.name + '(' + faculty.count  + ')'}"
+                                            th:href="@{/list/faculty/{id}(id=${faculty.id})}"/></li>
+
+                                </ul>
+                                <div class="col col-4">
+                                </div>
+                                <div class="col col-4">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Inne uczelnie w mieście</h4>
+                <div class="row row1 scroll-pane" style="overflow: hidden; padding: 0px; width: 283px;">
+
+
+                    <div class="web/jspContainer" style="width: 283px; height: 200px;">
+                        <div class="web/jspPane"
+                             style="padding: 20px; top: 0px; left: 0px; width: 243px;margin-top: 7px;">
+                            <div class="col col-4">
+                                <ul>
+                                    <li th:each="school: ${similar}"><a th:text="${school.name}"
+                                                                        th:href="@{/school/{id}/(id=${school.id})}"/>
+                                    </li>
+                                </ul>
+
+                                <!--<ul>   <li th:each="departments: ${departments}"><a th:text="${school.department}" th:href="@{/school/{id}/(id=${school.id})}"/></li>-->
+                                <!--</ul>-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -221,6 +226,7 @@
                     <!--<li><a href="#">Dostępne Kierunki</a></li>-->
                     <li><a th:text="'Dane '+'teleadresowe'" th:href="@{~/school/{id}/(id=${school.id})}"/></li>
                     <li><a th:text="'Oferta '+'edukacyjna'" th:href="@{~/offer/{id}/(id=${school.id})}"/></li>
+                    <li><a href="#">Opis</a></li>
                     <li><a href="#">Opinie</a></li>
                     <div class="clearfix"></div>
                 </ul>
@@ -230,86 +236,131 @@
                     </form>
                 </div>
                 <ul class="add-to-links list-unstyled">
-                    <li>     <img src="http://localhost:8080/web/images/wish.png" alt=""/><a href="#">Dane Teleadresowe</a>
+                    <li><img src="http://localhost:8080/web/images/wish.png" alt=""/><a href="#">Oferta</a>
                     </li>
                 </ul>
-                <p class="m_desc" th:text="${school.address}"/>
-                <p class="m_desc" th:text="${school.city.name}"/>
-                <p class="m_desc" th:text="${school.name}"/>
-                <p class="m_desc" th:text="${school.phone}"/>
-                <p class="m_desc" th:text="${school.fax}"/>
+                <p class="m_desc" th:each="departmentFaculty: ${facultiesByDepartment}"
+                   th:text="${departmentFaculty.name}"/>
+                <p class="m_desc"/>
+                <p class="m_desc"/>
 
-                <p class="m_desc"><a th:text="${school.www}" th:href="@{${school.www}}"/></p>
-                <div class="social_single">
 
-                </div>
+                <!--<div th:each="schoolDepartment: ${schoolDepartments}"><a th:text="${schoolDepartment.name}" th:href="@{~/faculty/{id}/(id=${school.id})}"/>-->
             </div>
-            <div class="clearfix"></div>
+            <div class="social_single">
+
+            </div>
         </div>
-        <div class="toogle">
-            <h3 class="m_3">Opis</h3>
-            <p class="m_text" th:text="${school.description}"/>
-        </div>
-        <div class="toogle">
-            <h3 class="m_3">Informacja 2 </h3>
-            <p class="m_text"></p>
-        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="toogle">
+        <h3 class="m_3">Opis</h3>
+        <p class="m_text" th:text="${school.description}"/>
+    </div>
+    d
+    <div class="toogle">
+        <h3 class="m_3">Informacja 2 </h3>
+        <p class="m_text"></p>
+    </div>
+</div>
+
+<div class="nbs-flexisel-container" th:each="school: ${school}" th:unless="${schoolStat.index > 4}">
+    <div class="nbs-flexisel-inner">
+        <ul id="flexiselDemo3" class="nbs-flexisel-ul" style="left: -195.2px; display: block;">
+
+
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="http://localhost:8080/web/images/pic9.jpg"/>
+                <div class="grid-flex"><a href="#">Zumba</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/>
+                <div class="grid-flex"><a href="#">Bloch</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/>
+                <div class="grid-flex"><a href="#">Capzio</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/>
+                <div class="grid-flex"><a href="#">Bloch</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/>
+                <div class="grid-flex"><a href="#">Capzio</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic9.jpg"/>
+                <div class="grid-flex"><a href="#">Zumba</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/>
+                <div class="grid-flex"><a href="#">Bloch</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/>
+                <div class="grid-flex"><a href="#">Capzio</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/>
+                <div class="grid-flex"><a href="#">Bloch</a>
+                    <p>Rs 850</p></div>
+            </li>
+            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/>
+                <div class="grid-flex"><a href="#">Capzio</a>
+                    <p>Rs 850</p></div>
+            </li>
+        </ul>
+        <div class="nbs-flexisel-nav-left" style="top: 74px;"></div>
+        <div class="nbs-flexisel-nav-right" style="top: 74px;"></div>
     </div>
 
-    <div class="nbs-flexisel-container" th:each="school: ${school}" th:unless="${schoolStat.index > 4}">
-        <div class="nbs-flexisel-inner">
-            <ul id="flexiselDemo3" class="nbs-flexisel-ul" style="left: -195.2px; display: block;">
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#flexiselDemo1").flexisel();
+            $("#flexiselDemo2").flexisel({
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 3
+                    }
+                }
+            });
 
+            $("#flexiselDemo3").flexisel({
+                visibleItems: 5,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 3
+                    }
+                }
+            });
 
-                <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="http://localhost:8080/web/images/pic9.jpg"/><div class="grid-flex"><a href="#">Zumba</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic9.jpg"/><div class="grid-flex"><a href="#">Zumba</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li></ul><div class="nbs-flexisel-nav-left" style="top: 74px;"></div><div class="nbs-flexisel-nav-right" style="top: 74px;"></div></div>
-
-            <script type="text/javascript">
-                $(window).load(function() {
-                    $("#flexiselDemo1").flexisel();
-                    $("#flexiselDemo2").flexisel({
-                        enableResponsiveBreakpoints: true,
-                        responsiveBreakpoints: {
-                            portrait: {
-                                changePoint:480,
-                                visibleItems: 1
-                            },
-                            landscape: {
-                                changePoint:640,
-                                visibleItems: 2
-                            },
-                            tablet: {
-                                changePoint:768,
-                                visibleItems: 3
-                            }
-                        }
-                    });
-
-                    $("#flexiselDemo3").flexisel({
-                        visibleItems: 5,
-                        animationSpeed: 1000,
-                        autoPlay: true,
-                        autoPlaySpeed: 3000,
-                        pauseOnHover: true,
-                        enableResponsiveBreakpoints: true,
-                        responsiveBreakpoints: {
-                            portrait: {
-                                changePoint:480,
-                                visibleItems: 1
-                            },
-                            landscape: {
-                                changePoint:640,
-                                visibleItems: 2
-                            },
-                            tablet: {
-                                changePoint:768,
-                                visibleItems: 3
-                            }
-                        }
-                    });
-
-                });
-            </script>
-            <script type="text/javascript" src="web/js/jquery.flexisel.js"></script>
+        });
+    </script>
+    <script type="text/javascript" src="web/js/jquery.flexisel.js"></script>
 
     <div class="clearfix"></div>
 </div>
@@ -336,34 +387,6 @@
         </div>
     </div>
 </div>
-</div>
-<!--<h2 th:text="${school.name}" />c-->
-<!--<div th:text="${school.logoUrl}" />-->
-<!--<div th:text="${school.address}" />-->
-<!--<div th:text="${school.isPublic}" />-->
-<!--<div th:text="${school.city.name}" />-->
-<!--<div th:text="${school.phone}" />-->
-<!--<div th:text="${school.fax}" />-->
-<!--<div th:text="${school.www}" />-->
-<!--<div th:text="${school.description}" />-->
-
-
-<!--<ul>-->
-<!--<li th:each="schoolFaculty: ${schoolFaculties}"  th:text="${schoolFaculty.name}" />-->
-<!--</ul>-->
-<!--<div th:if="${school.isPublic} == true">Publiczna</div>-->
-<!--<div th:if="${school.isPublic} == false">Niepubliczna</div>-->
-
-<!--&lt;!&ndash;dla zakladki kierunki <ul>&ndash;&gt;-->
-<!--&lt;!&ndash;<li th:each="schoolFaculty: ${schoolFaculties}"  th:text="${schoolFaculty.name}" />&ndash;&gt;-->
-<!--&lt;!&ndash;th:href="@{/list/faculty/{id}/(id=${faculty.id})}"/></li>&ndash;&gt;-->
-
-<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-<!--Miasta:-->
-<!--<ul>-->
-<!--<li th:each="city: ${cities}"><a th:text="${city.name }"-->
-<!--/></li>-->
-<!--</ul>-->
-
+<!--<h2 th:text="${school.name}" />-->
 </body>
 </html>

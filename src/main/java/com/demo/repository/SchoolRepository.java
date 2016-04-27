@@ -36,4 +36,12 @@ public interface SchoolRepository extends CrudRepository<School, Integer> {
             "ORDER BY s.name ")
     List<School> findSchoolsByFacultyId(@Param("facultyId") Integer FacultyId);
 
+    @Query("SELECT DISTINCT s " +
+            "FROM DepartmentFaculty AS df " +
+            "JOIN df.department.school AS s " +
+            "JOIN df.department.school.city AS c " +
+            "WHERE c.voivodeship.id = :voivodeshipId " +
+            "ORDER BY s.name ")
+//
+    List<School> findSchoolsByVoivodeshipId(@Param("voivodeshipId") Integer voivodeshipId);
 }

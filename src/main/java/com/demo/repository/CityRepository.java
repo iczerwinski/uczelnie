@@ -12,7 +12,5 @@ public interface CityRepository extends CrudRepository<City, Integer> {
 
     List<City> findAll();
 
-//    List<City> findBySchoolId(@Param("schoolId") Integer schoolId);
-
 
 }

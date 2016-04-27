@@ -1,7 +1,11 @@
 package com.demo.entity;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.util.Set;
+
+@Getter
 
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(name = "unq_voivodeship_name", columnNames = "name")})

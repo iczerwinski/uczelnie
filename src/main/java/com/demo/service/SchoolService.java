@@ -3,6 +3,7 @@ package com.demo.service;
 import com.demo.dto.SchoolRequestDto;
 import com.demo.entity.School;
 import com.demo.repository.CityRepository;
+import com.demo.repository.DepartmentRepository;
 import com.demo.repository.SchoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,8 @@ public class SchoolService {
     SchoolRepository schoolRepository;
     @Autowired
     CityRepository cityRepository;
+    @Autowired
+    DepartmentRepository departmentRepository;
 
     public void add(SchoolRequestDto schoolRequestDto) {
         School school = new School();
@@ -62,6 +65,12 @@ public class SchoolService {
     public List<School> getSchoolsByFacultyId(Integer facultyId) {
         return schoolRepository.findSchoolsByFacultyId(facultyId);
     }
+
+    public List<School> getSchoolsByVoivodeshipId(Integer voivodeshipId) {
+        return schoolRepository.findSchoolsByVoivodeshipId(voivodeshipId);
+    }
+
+
 
 
 }

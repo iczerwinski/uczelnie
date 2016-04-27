@@ -1,10 +1,7 @@
 package com.demo.controller;
 
 import com.demo.dto.SchoolRequestDto;
-import com.demo.service.CityService;
-import com.demo.service.FacultyService;
-import com.demo.service.SchoolService;
-import com.demo.service.SchoolTypeService;
+import com.demo.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +20,8 @@ public class SchoolController {
     private SchoolTypeService schoolTypeService;
     @Autowired
     private CityService cityService;
+    @Autowired
+    private VoivodeshipService voivodeshipService;
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView addNewSchool(@RequestBody SchoolRequestDto newSchool) {
@@ -44,20 +43,16 @@ public class SchoolController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
-    public String schoolInfoPage(Model model, @PathVariable(value = "id") Integer schoolId, Integer cityId) {
+    public String schoolInfoPage(Model model, @PathVariable(value = "id") Integer schoolId, Integer cityId, Integer voivodeshipId) {
         model.addAttribute("school", schoolService.get(schoolId));
         model.addAttribute("schoolFaculties", facultyService.getBySchoolId(schoolId));
         model.addAttribute("cities", cityService.getCities());
         model.addAttribute("schoolTypes", schoolTypeService.getSchoolTypes());
         model.addAttribute("faculties", facultyService.findFaculties());
+        model.addAttribute("voivodeships", voivodeshipService.getVoivodeships());
 //        model.addAttribute("similar", schoolService.getSchoolsByCityId(cityId));
         return "school";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/school/{id}")
-    public String sidebarsimilar(Model model, @PathVariable(value = "id") Integer cityId) {
-        model.addAttribute("similar", schoolService.getSchoolsByCityId(cityId));
-        return "school";
-    }
 
 }

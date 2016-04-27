@@ -7096,4 +7096,39 @@ button.close {
 
 }
 
+.sidebar_school a {
+    color: #4f8173 !important;
+
+}
+
+.sidebar_school ul.nav li a, ul.nav li a:visited {
+    color: #4f8173 !important;
+}
+
+.sidebar_school ul.nav li a:hover, ul.nav li a:active {
+    color: #4f8173 !important;
+}
+
+/*.schoolsearch{*/
+/*border: 2px rgb(89,89,89) solid;*/
+/*border-radius: 10px;*/
+/*background: rgb(255,255,255);*/
+/*padding: 18px;*/
+/*margin: 10px;*/
+/*width:40%;*/
+/*line-height: 1.6em;*/
+/*font-size:20px;*/
+/*}*/
+/*.schoolsearch input*/
+/*{display: inline-block;*/
+/*}*/
+/*.schoolsearch label{*/
+/*display: inline-block;*/
+/*float: left;*/
+/*clear: left;*/
+/*width: 250px;*/
+/*text-align: left;*/
+/*font-size:20px;*/
+
+/*}*/
 /*# sourceMappingURL=bootstrap.css.map */

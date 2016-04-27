@@ -45,7 +45,7 @@ public class School {
     public Gallery gallery;
 
     @OneToMany(mappedBy = "school")
-    private List<Department> departments;
+    public List<Department> departments;
 
     public School() {
     }

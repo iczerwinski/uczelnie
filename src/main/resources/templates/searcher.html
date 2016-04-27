@@ -50,7 +50,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <!--<div class="logo"><a href="localhost:8080"><img src="web/images/logo.png" alt=""/></a></div>-->
+                <!--<div class="logo"><a href="/"><img src="web/images/logo.png" alt=""/></a></div>-->
             </div>
             <div class="col-md-8">
                 <nav class="navbar navbar-default" role="navigation">
@@ -73,9 +73,9 @@
                                             Spis Uczelni<span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="/search?schoolTypeId=1">Wyższe</a></li>
-                                            <li><a href="/search?schoolTypeId=2">Policealne</a></li>
                                             <li><a href="/search?schoolTypeId=3">Językowe</a></li>
+                                            <li><a href="/search?schoolTypeId=2">Policealne</a></li>
+                                            <li><a href="/search?schoolTypeId=1">Wyższe</a></li>
 
                                         </ul>
                                     </div>
@@ -97,22 +97,24 @@
     <div class="main">
         <div class="row">
             <div class="col-md-12 text-left">
-                <h2>Lista</h2>
+                <h2>Wyszukiwarka</h2>
             </div>
         </div>
         <div class="row">
-            <div class="top">
-
-                <div class="list">
-                    <li th:each=" school: ${schools}">
-                        <hr/>
-                        <div class="thumbnail"><img th:src="${school.logoUrl}"/></div>
-                        <a th:text="${school.name}" th:href="@{/school/{id}/(id=${school.id})}"/></li>
-                </div>
-                <!--<li th:each=" school: ${schools}"><hr /><img th:src="${school.logoUrl}" /><a th:text="${school.name}" th:href="@{/school/{id}/(id=${school.id})}"/></li>-->
+            <div class="schoolsearch">
+                <form method="GET" th:action="@{/search}">
+                    <p>Typ szkoły:
+                        <select th:name="schoolTypeId">
+                            <option th:each="schoolType: ${schoolTypes}" th:text="${schoolType.name}"
+                                    th:value="${schoolType.id}"/>
+                        </select></p>
+                    <p><input type="text" name="schoolName" placeholder="Nazwa szkoły"/></p>
+                    <p><input type="text" name="facultyName" placeholder="Kierunek"/></p>
+                    <p><input type="text" name="cityName" placeholder="Miasto"/></p>
+                    <p><input type="submit" value="Wyślij"/></p>
+                </form>
+            </div>
         </div>
-        </div>
-
     </div>
 </div>
 <div class="footer">

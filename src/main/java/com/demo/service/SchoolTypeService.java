@@ -14,7 +14,7 @@ public class SchoolTypeService {
     SchoolTypeRepository schoolTypeRepository;
 
     public List<SchoolType> getSchoolTypes() {
-        return schoolTypeRepository.findByOrderByNameAsc();
+        return schoolTypeRepository.findByOrderByNameDesc();
     }
 
     public SchoolType get(Integer schoolId) {

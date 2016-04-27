@@ -1,15 +1,14 @@
 package com.demo.repository;
 
-import com.demo.entity.SchoolType;
+import com.demo.entity.Voivodeship;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface SchoolTypeRepository extends CrudRepository<SchoolType, Integer> {
+public interface VoivodeshipRepository extends CrudRepository<Voivodeship, Integer> {
 
-    List<SchoolType> findByOrderByNameDesc();
-
+    List<Voivodeship> findOneByOrderByNameAsc();
 
 }

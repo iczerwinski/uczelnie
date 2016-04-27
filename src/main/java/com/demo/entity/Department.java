@@ -1,6 +1,10 @@
 package com.demo.entity;
 
+import lombok.Getter;
+
 import javax.persistence.*;
+
+@Getter
 
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(name = "unq_department_name", columnNames = "name")})

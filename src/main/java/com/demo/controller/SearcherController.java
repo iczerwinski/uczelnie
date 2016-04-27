@@ -9,16 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import static com.demo.entity.City.WARSAW_ID;
 
 @Controller
-public class MainPageController {
+public class SearcherController {
 
-
-    @Autowired
-    private FacultyService facultyService;
 
     @Autowired
     private SchoolTypeService schoolTypeService;
@@ -26,19 +21,18 @@ public class MainPageController {
     private CityService cityService;
     @Autowired
     private SchoolService schoolService;
+    @Autowired
+    private FacultyService facultyService;
 
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/")
-    public String mainPage(@RequestParam(required = false, defaultValue = WARSAW_ID) Integer cityId, Integer departmentId, Model model) {
+    @RequestMapping(value = "/searcher", method = RequestMethod.GET)
+    public String searcher(Model model) {
         model.addAttribute("schools", schoolService.getSchools());
         model.addAttribute("schoolTypes", schoolTypeService.getSchoolTypes());
         model.addAttribute("faculties", facultyService.findFaculties());
-        model.addAttribute("facultiesByCity", facultyService.findFacultiesByCity(cityId));
         model.addAttribute("cities", cityService.getCities());
-        model.addAttribute("promo", schoolService.getSchoolPromo());
-        return "mainPage";
-        //comment dev branch
+        return "searcher";
     }
+
 
 }
