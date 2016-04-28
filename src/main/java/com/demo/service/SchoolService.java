@@ -42,8 +42,7 @@ public class SchoolService {
     }
 
     public School update(Integer schoolId, SchoolRequestDto schoolRequestDto) {
-        School school = new School();
-        school.setId(schoolId);
+        School school = schoolRepository.findOne(schoolId);
         school.setName(schoolRequestDto.getName());
         school.setAddress(schoolRequestDto.getAddress());
         return schoolRepository.save(school);
@@ -58,7 +57,7 @@ public class SchoolService {
     }
 
     public List<School> getSchoolsByCityId(Integer cityId) {
-        return schoolRepository.findSchoolsByCityId(cityId);
+        return schoolRepository.findByCityId(cityId);
     }
 
 

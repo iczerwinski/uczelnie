@@ -6,7 +6,11 @@
 </head>
 <body>
 <h2>Hello <span th:text="${firstName}"/> in admin panel</h2>
-
+<form method="POST" action="#" th:action="@{/school/{id}(id=${school.id})}" th:object="${school}">
+    <p>Name: <input type="text" th:field="*{name}"/></p>
+    <p>Address: <input type="text" th:field="*{address}"/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
 <a th:text="logout" href="/logout"> logout</a>
 
 </body>

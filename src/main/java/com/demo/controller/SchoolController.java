@@ -50,7 +50,6 @@ public class SchoolController {
         model.addAttribute("schoolTypes", schoolTypeService.getSchoolTypes());
         model.addAttribute("faculties", facultyService.findFaculties());
         model.addAttribute("voivodeships", voivodeshipService.getVoivodeships());
-//        model.addAttribute("similar", schoolService.getSchoolsByCityId(cityId));
         return "school";
     }
 

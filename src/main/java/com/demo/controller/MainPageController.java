@@ -30,7 +30,7 @@ public class MainPageController {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/")
-    public String mainPage(@RequestParam(required = false, defaultValue = WARSAW_ID) Integer cityId, Integer departmentId, Model model) {
+    public String mainPage(@RequestParam(required = false, defaultValue = WARSAW_ID) Integer cityId, Model model) {
         model.addAttribute("schools", schoolService.getSchools());
         model.addAttribute("schoolTypes", schoolTypeService.getSchoolTypes());
         model.addAttribute("faculties", facultyService.findFaculties());
@@ -38,7 +38,6 @@ public class MainPageController {
         model.addAttribute("cities", cityService.getCities());
         model.addAttribute("promo", schoolService.getSchoolPromo());
         return "mainPage";
-        //comment dev branch
     }
 
 }

@@ -27,7 +27,7 @@ public interface SchoolRepository extends CrudRepository<School, Integer> {
     List<School> findOneByOrderByPromoAsc();
 
 
-    List<School> findSchoolsByCityId(@Param("cityId") Integer cityId);
+    List<School> findByCityId(Integer cityId);
 
     @Query("SELECT DISTINCT s " +
             "FROM DepartmentFaculty AS df " +

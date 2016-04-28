@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -16,6 +17,7 @@ public class School {
     @GeneratedValue
     private Integer id;
 
+    @NotNull
     private String name;
 
     private String logoUrl;
@@ -39,6 +41,7 @@ public class School {
     private SchoolType schoolType;
 
     @ManyToOne
+    @NotNull
     public City city;
 
     @OneToOne

@@ -64,7 +64,9 @@ VALUES ('ul. Jagiellońska 57/59',
   'fax5', FALSE, 'http://imageshack.com/a/img924/8931/aPKphP.jpg', 'Akademia Leona Koźmińskiego', '519-21-00  ',
   'http://www.kozminski.edu.pl', '22', 1, 1, 5);
 INSERT INTO SCHOOL (ADDRESS, DESCRIPTION, FAX, IS_PUBLIC, LOGO_URL, NAME, PHONE, WWW, PROMO, CITY_ID, SCHOOL_TYPE_ID, GALLERY_ID)
-VALUES ('Aleja Grunwaldzka 238A', 'Opis1', 'fax1', FALSE, 'www.logo.pl1', 'Wyższa Szkoła Bankowa w Gdańsku', 'Phone 1',
+VALUES ('Aleja Grunwaldzka 238A', 'Opis1', 'fax1', FALSE,
+                                  'http://www.wsb.pl/gdansk/sites/gdansk.nowestrony.sandbox.dti.teb-akademia.pl/files/default_images/dla_prasy/materialy_dla_mediow/logo_wsb_pion.jpg',
+                                  'Wyższa Szkoła Bankowa w Gdańsku', 'Phone 1',
                                   'www.wsb.pl', '7', 4, 1, 6);
 
 
@@ -121,5 +123,7 @@ VALUES (9, 5, 1, 1, 1, 1);
 INSERT INTO DEPARTMENT_FACULTY (DEPARTMENT_ID, FACULTY_ID, FIRST_LEVEL_BACHELOR_ID, FIRST_LEVEL_ENGINEER_ID, MASTER_LEVEL_ID, UNIFIED_LEVEL_ID)
 VALUES (10, 2, 1, 1, 1, 1);
 
-
-
+INSERT INTO USER (FIRST_NAME, LOGIN, PASSWORD) VALUES ('asd', 'asd', 'asd');
+INSERT INTO USER (FIRST_NAME, LOGIN, PASSWORD) VALUES ('qwe', 'qwe', 'qwe');
+INSERT INTO USER (FIRST_NAME, LOGIN, PASSWORD) VALUES ('q', 'q', 'q');
+INSERT INTO USER (FIRST_NAME, LOGIN, PASSWORD) VALUES ('a', 'a', 'a');
