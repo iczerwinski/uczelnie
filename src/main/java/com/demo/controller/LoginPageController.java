@@ -1,17 +1,14 @@
 package com.demo.controller;
 
 import com.demo.dto.UserCredentialDto;
-import com.demo.dto.UserDto;
 import com.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.support.SessionAttributeStore;
-import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.context.request.WebRequest;
-
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import static com.demo.model.Session.FIRST_NAME;
 import static com.demo.model.Session.LOGGED_IN;
@@ -25,15 +22,11 @@ public class LoginPageController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute(value = "userCredentials") UserCredentialDto userCredentialDto, Model model) {
-        UserDto userDto = userService.login(userCredentialDto.getLogin(), userCredentialDto.getPassword());
-        if (userDto != null) {
-            model.addAttribute(FIRST_NAME, userDto.getFirstName());
-            model.addAttribute(LOGGED_IN, Boolean.TRUE);
+        userService.login(model, userCredentialDto.getLogin(), userCredentialDto.getPassword());
+        if (userService.isLoggedIn(model))
             return "mainPage";
-        } else {
-            model.addAttribute("msg", "login failed");
+        else
             return "login";
-        }
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -42,10 +35,8 @@ public class LoginPageController {
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(@ModelAttribute(value = "userCredentials") UserCredentialDto userCredentialDto, Model model, SessionAttributeStore sessionAttributeStore, SessionStatus sessionStatus, WebRequest webRequest) {
-        sessionStatus.setComplete();
-        sessionAttributeStore.cleanupAttribute(webRequest, FIRST_NAME);
-        sessionAttributeStore.cleanupAttribute(webRequest, LOGGED_IN);
+    public String logout(Model model, @ModelAttribute(value = "userCredentials") UserCredentialDto userCredentialDto) {
+        userService.logout(model);
         return "login";
     }
 }

@@ -1,6 +1,5 @@
 package com.demo.entity;
 
-import lombok.Builder;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -19,6 +18,9 @@ public class User {
     private String login;
 
     private String password;
+
+    public User() {
+    }
 
     public User(String firstName, String login, String password) {
         this.firstName = firstName;

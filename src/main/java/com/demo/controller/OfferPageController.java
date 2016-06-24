@@ -26,6 +26,8 @@ public class OfferPageController {
     private DepartmentService departmentService;
     @Autowired
     private DepartmentRepository departmentRepository;
+    @Autowired
+    private VoivodeshipService voivodeshipService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/offer/{id}")
     public String offerpage(Model model, @PathVariable(value = "id") Integer schoolId) {
@@ -35,10 +37,11 @@ public class OfferPageController {
         model.addAttribute("schoolTypes", schoolTypeService.getSchoolTypes());
         model.addAttribute("faculties", facultyService.findFaculties());
         model.addAttribute("schoolDepartments", departmentService.getBySchoolId(schoolId));
+        model.addAttribute("voivodeships", voivodeshipService.getVoivodeships());
         return "offer";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/offer/department/*-{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/offer/department/{id}")
     public String facultiesdepartmentpage(Model model, @PathVariable(value = "id") Integer departmentId) {
         Department department = departmentRepository.findOne(departmentId);
         model.addAttribute("facultiesByDepartment", facultyService.getByDepartmentId(departmentId));
@@ -47,10 +50,10 @@ public class OfferPageController {
         model.addAttribute("schoolFaculties", facultyService.getBySchoolId(department.getSchool().getId()));
         model.addAttribute("cities", cityService.getCities());
         model.addAttribute("schoolTypes", schoolTypeService.getSchoolTypes());
+        model.addAttribute("similar", schoolService.getSchoolsByCityId(department.getSchool().getCity().getId()));
         model.addAttribute("faculties", facultyService.findFaculties());
         model.addAttribute("schoolDepartments", departmentService.getBySchoolId(department.getSchool().getId()));
         model.addAttribute("Departments", departmentService.getDepartments());
-        model.addAttribute("similar", schoolService.getSchoolsByCityId(department.getSchool().getCity().getId()));
         return "faculty";
     }
 

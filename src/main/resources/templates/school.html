@@ -7,19 +7,19 @@
     <title th:text="${school.name}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <link href="http://localhost:8080/web/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-    <link href="http://localhost:8080/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="http://localhost:8080/web/css/theme.css" rel='stylesheet' type='text/css' />
+    <link href="/web/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <link href="/web/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="/web/css/theme.css" rel='stylesheet' type='text/css'/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'/>
-            <script type="text/javascript" src="web/js/jquery.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/web/js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/web/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/web/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/web/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/web/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/web/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/web/js/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="http://localhost:8080/web/css/etalage.css"/>
-    <script src="http://localhost:8080/web/js/jquery.etalage.min.js"></script>
+    <link rel="stylesheet" href="/web/css/etalage.css"/>
+    <script src="/web/js/jquery.etalage.min.js"></script>
     <script>
         jQuery(document).ready(function($){
 
@@ -45,7 +45,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="logo"><a href="localhost:8080"><img src="web/images/logo.png" alt=""/></a></div>
+                <!--<div class="logo"><a href=""><img src="/web/images/logo.png" alt=""/></a></div>-->
             </div>
             <div class="col-md-8">
                 <nav class="navbar navbar-default" role="navigation">
@@ -230,7 +230,7 @@
                     </form>
                 </div>
                 <ul class="add-to-links list-unstyled">
-                    <li>     <img src="http://localhost:8080/web/images/wish.png" alt=""/><a href="#">Dane Teleadresowe</a>
+                    <li><img src="/web/images/wish.png" alt=""/><a href="#">Dane Teleadresowe</a>
                     </li>
                 </ul>
                 <p class="m_desc" th:text="${school.address}"/>
@@ -257,11 +257,11 @@
     </div>
 
     <div class="nbs-flexisel-container" th:each="school: ${school}" th:unless="${schoolStat.index > 4}">
-        <div class="nbs-flexisel-inner">
-            <ul id="flexiselDemo3" class="nbs-flexisel-ul" style="left: -195.2px; display: block;">
+        <!--<div class="nbs-flexisel-inner">-->
+        <!--<ul id="flexiselDemo3" class="nbs-flexisel-ul" style="left: -195.2px; display: block;">-->
 
 
-                <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="http://localhost:8080/web/images/pic9.jpg"/><div class="grid-flex"><a href="#">Zumba</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic9.jpg"/><div class="grid-flex"><a href="#">Zumba</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li></ul><div class="nbs-flexisel-nav-left" style="top: 74px;"></div><div class="nbs-flexisel-nav-right" style="top: 74px;"></div></div>
+        <!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="http://localhost:8080/web/images/pic9.jpg"/><div class="grid-flex"><a href="#">Zumba</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic9.jpg"/><div class="grid-flex"><a href="#">Zumba</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li><li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li></ul><div class="nbs-flexisel-nav-left" style="top: 74px;"></div><div class="nbs-flexisel-nav-right" style="top: 74px;"></div></div>-->
 
             <script type="text/javascript">
                 $(window).load(function() {
@@ -324,9 +324,7 @@
                 </ul>
 
                 <form class="navbar-form pull-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search"/>
-                    </div>
+
                 </form>
             </div>
         </div>

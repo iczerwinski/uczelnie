@@ -7,9 +7,9 @@
     <title th:text="${school.name}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <link href="http://localhost:8080/web/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
-    <link href="http://localhost:8080/web/css/bootstrap.css" rel='stylesheet' type='text/css'/>
-    <link href="http://localhost:8080/web/css/theme.css" rel='stylesheet' type='text/css'/>
+    <link href="/web/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <link href="/web/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="/web/css/theme.css" rel='stylesheet' type='text/css'/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
@@ -19,12 +19,12 @@
     } </script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'/>
     <script type="text/javascript" src="web/js/jquery.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/web/js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/web/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8080/web/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/web/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/web/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/web/js/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="http://localhost:8080/web/css/etalage.css"/>
-    <script src="http://localhost:8080/web/js/jquery.etalage.min.js"></script>
+    <link rel="stylesheet" href="/web/css/etalage.css"/>
+    <script src="/web/js/jquery.etalage.min.js"></script>
     <script>
         jQuery(document).ready(function ($) {
 
@@ -148,6 +148,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="sidebar_school">
                 <h4>Inne uczelnie w mieście</h4>
                 <div class="row row1 scroll-pane" style="overflow: hidden; padding: 0px; width: 283px;">
 
@@ -168,6 +169,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+
             </section>
         </div>
         <div class="cont span_2_of_3">
@@ -226,7 +229,6 @@
                     <!--<li><a href="#">Dostępne Kierunki</a></li>-->
                     <li><a th:text="'Dane '+'teleadresowe'" th:href="@{~/school/{id}/(id=${school.id})}"/></li>
                     <li><a th:text="'Oferta '+'edukacyjna'" th:href="@{~/offer/{id}/(id=${school.id})}"/></li>
-                    <li><a href="#">Opis</a></li>
                     <li><a href="#">Opinie</a></li>
                     <div class="clearfix"></div>
                 </ul>
@@ -236,11 +238,13 @@
                     </form>
                 </div>
                 <ul class="add-to-links list-unstyled">
-                    <li><img src="http://localhost:8080/web/images/wish.png" alt=""/><a href="#">Oferta</a>
+                    <li><img src="/web/images/wish.png" alt=""/><a href="#">Oferta</a>
                     </li>
                 </ul>
                 <p class="m_desc" th:each="departmentFaculty: ${facultiesByDepartment}"
                    th:text="${departmentFaculty.name}"/>
+                <p class="m_desc" th:each="schoolTypeMode: ${schoolTypeModes}"
+                   th:text="${schoolTypeMode.name}"/>
                 <p class="m_desc"/>
                 <p class="m_desc"/>
 
@@ -257,113 +261,113 @@
         <h3 class="m_3">Opis</h3>
         <p class="m_text" th:text="${school.description}"/>
     </div>
-    d
+
     <div class="toogle">
         <h3 class="m_3">Informacja 2 </h3>
         <p class="m_text"></p>
     </div>
 </div>
 
-<div class="nbs-flexisel-container" th:each="school: ${school}" th:unless="${schoolStat.index > 4}">
-    <div class="nbs-flexisel-inner">
-        <ul id="flexiselDemo3" class="nbs-flexisel-ul" style="left: -195.2px; display: block;">
+<!--<div class="nbs-flexisel-container" th:each="school: ${school}" th:unless="${schoolStat.index > 4}">-->
+<!--<div class="nbs-flexisel-inner">-->
+<!--<ul id="flexiselDemo3" class="nbs-flexisel-ul" style="left: -195.2px; display: block;">-->
 
 
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="http://localhost:8080/web/images/pic9.jpg"/>
-                <div class="grid-flex"><a href="#">Zumba</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/>
-                <div class="grid-flex"><a href="#">Bloch</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/>
-                <div class="grid-flex"><a href="#">Capzio</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/>
-                <div class="grid-flex"><a href="#">Bloch</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/>
-                <div class="grid-flex"><a href="#">Capzio</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic9.jpg"/>
-                <div class="grid-flex"><a href="#">Zumba</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/>
-                <div class="grid-flex"><a href="#">Bloch</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/>
-                <div class="grid-flex"><a href="#">Capzio</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/>
-                <div class="grid-flex"><a href="#">Bloch</a>
-                    <p>Rs 850</p></div>
-            </li>
-            <li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/>
-                <div class="grid-flex"><a href="#">Capzio</a>
-                    <p>Rs 850</p></div>
-            </li>
-        </ul>
-        <div class="nbs-flexisel-nav-left" style="top: 74px;"></div>
-        <div class="nbs-flexisel-nav-right" style="top: 74px;"></div>
-    </div>
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="http://localhost:8080/web/images/pic9.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Zumba</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Bloch</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Capzio</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Bloch</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Capzio</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic9.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Zumba</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic8.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Bloch</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic7.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Capzio</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic11.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Bloch</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--<li class="nbs-flexisel-item" style="width: 195.2px;"><img src="web/images/pic10.jpg"/>-->
+<!--<div class="grid-flex"><a href="#">Capzio</a>-->
+<!--<p>Rs 850</p></div>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div class="nbs-flexisel-nav-left" style="top: 74px;"></div>-->
+<!--<div class="nbs-flexisel-nav-right" style="top: 74px;"></div>-->
+<!--</div>-->
 
-    <script type="text/javascript">
-        $(window).load(function () {
-            $("#flexiselDemo1").flexisel();
-            $("#flexiselDemo2").flexisel({
-                enableResponsiveBreakpoints: true,
-                responsiveBreakpoints: {
-                    portrait: {
-                        changePoint: 480,
-                        visibleItems: 1
-                    },
-                    landscape: {
-                        changePoint: 640,
-                        visibleItems: 2
-                    },
-                    tablet: {
-                        changePoint: 768,
-                        visibleItems: 3
-                    }
-                }
-            });
+<!--<script type="text/javascript">-->
+<!--$(window).load(function () {-->
+<!--$("#flexiselDemo1").flexisel();-->
+<!--$("#flexiselDemo2").flexisel({-->
+<!--enableResponsiveBreakpoints: true,-->
+<!--responsiveBreakpoints: {-->
+<!--portrait: {-->
+<!--changePoint: 480,-->
+<!--visibleItems: 1-->
+<!--},-->
+<!--landscape: {-->
+<!--changePoint: 640,-->
+<!--visibleItems: 2-->
+<!--},-->
+<!--tablet: {-->
+<!--changePoint: 768,-->
+<!--visibleItems: 3-->
+<!--}-->
+<!--}-->
+<!--});-->
 
-            $("#flexiselDemo3").flexisel({
-                visibleItems: 5,
-                animationSpeed: 1000,
-                autoPlay: true,
-                autoPlaySpeed: 3000,
-                pauseOnHover: true,
-                enableResponsiveBreakpoints: true,
-                responsiveBreakpoints: {
-                    portrait: {
-                        changePoint: 480,
-                        visibleItems: 1
-                    },
-                    landscape: {
-                        changePoint: 640,
-                        visibleItems: 2
-                    },
-                    tablet: {
-                        changePoint: 768,
-                        visibleItems: 3
-                    }
-                }
-            });
+<!--$("#flexiselDemo3").flexisel({-->
+<!--visibleItems: 5,-->
+<!--animationSpeed: 1000,-->
+<!--autoPlay: true,-->
+<!--autoPlaySpeed: 3000,-->
+<!--pauseOnHover: true,-->
+<!--enableResponsiveBreakpoints: true,-->
+<!--responsiveBreakpoints: {-->
+<!--portrait: {-->
+<!--changePoint: 480,-->
+<!--visibleItems: 1-->
+<!--},-->
+<!--landscape: {-->
+<!--changePoint: 640,-->
+<!--visibleItems: 2-->
+<!--},-->
+<!--tablet: {-->
+<!--changePoint: 768,-->
+<!--visibleItems: 3-->
+<!--}-->
+<!--}-->
+<!--});-->
 
-        });
-    </script>
-    <script type="text/javascript" src="web/js/jquery.flexisel.js"></script>
+<!--});-->
+<!--</script>-->
+<!--<script type="text/javascript" src="web/js/jquery.flexisel.js"></script>-->
 
-    <div class="clearfix"></div>
-</div>
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
 <div class="footer">
     <div class="container">
         <div class="row">
@@ -375,9 +379,7 @@
                 </ul>
 
                 <form class="navbar-form pull-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search"/>
-                    </div>
+
                 </form>
             </div>
         </div>

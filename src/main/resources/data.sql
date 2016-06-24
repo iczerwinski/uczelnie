@@ -31,7 +31,10 @@ INSERT INTO GALLERY (ID, Photo1, Photo2, Photo3, Photo4) VALUES ('2', 'http://im
 INSERT INTO GALLERY (ID, Photo1, Photo2, Photo3, Photo4) VALUES ('3', 'http://imageshack.com/a/img921/3155/bHak6q.jpg', 'http://imageshack.com/a/img923/7900/EUZWyI.jpg
 ', 'http://imageshack.com/a/img923/8960/ufbBdJ.jpg', 'http://imageshack.com/a/img923/169/EeWWkM.jpg');
 INSERT INTO GALLERY (ID, Photo1, Photo2, Photo3, Photo4) VALUES ('4', '1', '2', '3', '4');
-INSERT INTO GALLERY (ID, Photo1, Photo2, Photo3, Photo4) VALUES ('5', '1', '2', '3', '4');
+INSERT INTO GALLERY (ID, Photo1, Photo2, Photo3, Photo4) VALUES ('5', 'http://imageshack.com/a/img924/9438/3ky6V4.jpg
+', 'http://imageshack.com/a/img922/4927/2OwJXE.jpg
+', 'http://imageshack.com/a/img924/2742/2hXCl4.jpg
+', 'http://imageshack.com/a/img924/4574/6w6bQc.jpg');
 INSERT INTO GALLERY (ID, Photo1, Photo2, Photo3, Photo4) VALUES ('6', '1', '2', '3', '4');
 
 

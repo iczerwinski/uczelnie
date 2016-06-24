@@ -8,8 +8,14 @@
 <h2>School edit</h2>
 
 <form method="POST" action="#" th:action="@{/school/{id}(id=${school.id})}" th:object="${school}">
-    <p>Name: <input type="text" th:field="*{name}"/></p>
-    <p>Address: <input type="text" th:field="*{address}"/></p>
+    <p>Nazwa: <input type="text" th:field="*{name}"/></p>
+    <p>Adres: <input type="text" th:field="*{address}"/></p>
+    <p>Fax: <input type="text" th:field="*{fax}"/></p>
+    <p>Telefon: <input type="text" th:field="*{phone}"/></p>
+    <p>WWW: <input type="text" th:field="*{www}"/></p>
+    <p>Opis: <input type="text" th:field="*{description}"/></p>
+    <p>Promocja: <input type="text" th:field="*{promo}"/></p>
+
     <p><input type="submit" value="Submit"/></p>
 </form>
 
